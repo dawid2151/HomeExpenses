@@ -71,35 +71,6 @@ namespace HomeExpenses
                 if (!created)
                     return;
 
-                var store = new StoreDTO
-                {
-                    Name = "Biedronka",
-                    Address = "ul. Uniwersytecka 12, 40-007 Katowice",
-                    NIP = "779-10-11-327"
-                };
-                context.Stores.Add(store);
-
-                var receipt = new ReceiptDTO
-                {
-                    Id = Guid.NewGuid(),
-                    DateTime = DateTime.Parse("2021-10-01 12:08"),
-                    PaymentMethod = "Visa Card",
-                    Store = store
-                };
-                context.Receipts.Add(receipt);
-
-                var product = new ProductDTO
-                {
-                    Id = Guid.NewGuid(),
-                    Category = Category.Jedzenie,
-                    Name = "Cukier Bia³y 1kg",
-                    ItemPrice = 2.49,
-                    Ammount = 1f,
-                    Discount = 0f,
-                    Receipt = receipt
-                };
-                context.Products.Add(product);
-
                 context.SaveChanges();
             }
         }
